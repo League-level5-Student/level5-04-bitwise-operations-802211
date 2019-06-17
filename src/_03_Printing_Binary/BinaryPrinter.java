@@ -8,28 +8,18 @@ public class BinaryPrinter {
 	
 	public static void main(String[] args) {
 		BinaryPrinter bp = new BinaryPrinter();
-		//bp.printIntBinary(521);
-//		short s = 521;
-//		bp.printShortBinary(s);
-		byte b = (byte) 521;
-		bp.printByteBinary(b); // START HERE
+		bp.printIntBinary(521);
+		short s = 521;
+		bp.printShortBinary(s);
+		byte b = (byte) 127;
+		bp.printByteBinary(b);
+		long l = 888;
+		bp.printLongBinary(l);
 	}
 	
 	public void printByteBinary(byte b) {
-		String binary = "0";
-		byte x = b;
-		
-		for(int z = 2048; z>0; z = z/2) {
-			if(x>=z) {
-				x = (byte) (x-z);
-				binary = binary + "1";
-			}
-			else {
-				binary = binary + "0";
-			}
-		}
-		System.out.println(binary);
-		
+	printIntBinary(b);
+	
 	}
 	
 	
@@ -57,6 +47,19 @@ public class BinaryPrinter {
 	}
 	
 	public void printLongBinary(long l) {
+		String binary = "0";
+		long x = l;
+		
+		for(int z = 2048; z>0; z = z/2) {
+			if(x>=z) {
+				x = x-z;
+				binary = binary + "1";
+			}
+			else {
+				binary = binary + "0";
+			}
+		}
+		System.out.println(binary);
 		
 	}
-}
+	}
